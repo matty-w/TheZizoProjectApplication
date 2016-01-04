@@ -1,0 +1,1057 @@
+/*################################## Main CSS Elements ######################################################*/
+
+html 
+{ 
+  height: 100% 
+
+}
+
+hr.styleTop
+{
+  padding: 0;
+  border: 0px;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center; 
+  position: relative;
+  top: 9.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+}
+
+hr.styleTop:AFTER
+{
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+hr.styleBottom
+{
+  padding: 0;
+  border: 0px;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center; 
+  position: relative;  
+  top: 10.8em;
+  margin-left: auto;
+  margin-right: auto;  
+  width: 30em;
+  background-image:url('images/zizoLogoTiny.png');
+}
+
+
+hr.styleBottom:AFTER
+{
+  color: #999;
+  background-color: #191919;  
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+}
+
+#tinyLogo
+{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 9.8em;
+}
+
+::-moz-selection 
+{ 
+  background: #235B6D; 
+  color: #fff; 
+  text-shadow: none;
+}
+
+::selection
+{ 
+  background: #235B6D; 
+  color: #fff; 
+  text-shadow: none;
+}
+
+.login 
+{
+  background: #2F2F2F;
+  border-radius: 9px;
+  height: 300px;
+  width: 298px;
+  position: relative;
+  top: 10em;
+  bottom: auto;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login h1 
+{
+  background-image: linear-gradient(top, #f1f3f3, #d4dae0);
+  border-bottom: 1px solid #a6abaf;
+  border-radius: 6px 6px 0 0;
+  box-sizing: border-box;
+  color: #727678;
+  display: block;
+  height: 43px;
+  font: 600 14px/1 'Open Sans', sans-serif;
+  padding-top: 14px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 #fff;
+}
+
+input[type="password"], input[type="text"] 
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 31px 0 0 29px;
+  padding-left: 37px;
+  transition: box-shadow 0.3s;
+  width: 240px;
+}
+
+input[type="password"]:focus, input[type="text"]:focus 
+{
+  box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+  outline: 0;
+}
+
+.forgot:hover 
+{ 
+  color: #3b3b3b
+}
+
+#submitButton
+{
+  width:240px;
+  height:35px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  padding-top:6px;
+  margin: 29px 0 0 29px;
+  position:relative;
+  cursor:pointer;
+  border: none;  
+  background-color: #235B6D;
+  background-image: linear-gradient(top,#3db0a6,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+}
+
+#resetButton
+{
+  width:240px;
+  height:35px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  padding-top:6px;
+  margin: 29px 0 0 29px;
+  position:relative;
+  cursor:pointer;
+  border: none;  
+  background-color: #AF2525;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+}
+
+#submitButton:hover
+{
+  background-color: #1C4B5B;  
+}
+
+#resetButton:hover
+{
+  background-color: #901F1F;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#buttonDiv
+{
+  width: 200px;
+  height: 2em;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginDetailsDiv
+{
+  position: relative;
+  height: 6em;
+  width: 18em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#returnButton
+{
+  height: 2em;
+  width: 10%;
+  vertical-align: bottom;
+  display: inline-block;
+  float: right;
+}
+
+#deleteLicencesButton
+{
+  height: 2em;
+  width: 10%;
+  vertical-align: bottom;
+  display: inline-block;
+  float: right;
+}
+
+.loginButtons2
+{
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #235B6D;
+  padding: 4px 15px 4px 15px;
+  text-decoration: none;
+}
+
+.loginButtons2:hover
+{
+  background: #296b80;
+  text-decoration: none;
+}
+
+table#searchTable
+{
+  width: 100%; 
+  display: inline-table;
+  background-color: #f1f1c1;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#pageLayout
+{
+  position: relative;
+  top: 7.5em; 
+  width: 55%;
+  height: 22em;
+  max-height: 28em;
+  min-height: 10em;
+  bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 47em;
+}
+
+#searchTableDiv
+{
+  position: absolute;
+  overflow: auto;
+  height: 60%;
+  top: 3em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.loginButtons
+{
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #5C5CD7;
+  padding: 4px 15px 4px 15px;
+  text-decoration: none;
+}
+
+.loginButtons:hover
+{
+  background: #7C75D3;
+  text-decoration: none;
+}
+
+
+
+body
+{
+  background-color: #191919;
+}
+
+h2
+{
+  color: #ffffff; 
+  font-family: 'Lato', sans-serif; 
+  font-size: 30px; 
+  font-weight: 300; 
+  text-shadow: 1px 1px #000000;
+  text-align: center;
+}
+
+h2#loginTitle
+{
+  color: #adb7bd;
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 58px;
+  margin: 0 0 px;
+  position: relative;
+  top: 4em;
+  bottom: auto;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginSubTitle
+{
+  color: #adb7bd; 
+  font-family: 'Lato', sans-serif; 
+  font-size: 20px; 
+  font-weight: 300; 
+  text-shadow: 1px 1px #000000;
+  text-align: center; 
+  position: relative;
+  top: 7em;
+  bottom: auto;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3
+{
+  color: #ffffff; 
+  font-family: 'Lato', sans-serif; 
+  font-size: 20px; 
+  font-weight: 300; 
+  text-shadow: 1px 1px #000000;
+  text-align: center;
+}
+
+table#logTable
+{
+  width: 100%; 
+  background-color: #f1f1c1;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th 
+{
+  text-align: left;
+  border: 1px solid black;
+  background-color: #279252;
+  color: #F0F2F0;
+}
+
+td
+{
+  border: 1px solid black;
+  background-color: #88D3A6;
+}
+
+/*########################### Main ID's Accross Pages #########################################################*/
+
+#hidden
+{
+  display: none;
+}
+
+
+#topPage
+{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-height: 5em;
+  max-height: 5em;
+  z-index: -1;
+}
+
+#zizoLogo
+{
+  position: absolute;
+  left: 150px;
+  top: 0px;
+}
+
+#bottomPage
+{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 5em;
+  max-height: 5em;
+}
+
+#menu
+{
+  position: fixed;
+  left: 0%;
+  top: 30%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#pageDiv
+{
+  width: 25em;
+  height: 25em;
+  position: absolute;
+  top: -9em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#pageDivSmall
+{
+  width: 25em;
+  height: 25em;
+  position: absolute;
+  top: 5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#pageDiv2
+{
+  width: 25em;
+  height: 25em;
+  position: absolute;
+  top: 22em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#logoutButton
+{
+  position: fixed;
+  left: 90%;
+  top: 80%;
+  width: 9%;
+  height: auto;
+}
+
+#helpButton
+{
+  position: fixed;
+  left: 90%;
+  top: 15%;
+  width: 9%;
+  height: auto;
+}
+
+#loggedInUserLabel
+{
+  color: white;
+  text-shadow: 1px 1px #000000;
+  position: fixed;
+  left: 2%;
+  top: 80%;
+}
+
+#formTitles
+{
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+#formLabel
+{
+  color: #25383C;
+  float: left;
+  display: block;
+  margin:0 0 3px 0;
+  padding:0px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#default_form
+{
+  position: fixed;
+  width: 25em;
+  margin: 0;
+  padding: 0;
+}
+
+#thirtyDays
+{
+  margin-left: 64px;
+}
+
+#neverExpires
+{
+  margin-left: 49px;
+}
+
+#specified
+{
+  margin-left: 47px;
+}
+
+#loginHrTop
+{
+  position: relative;
+  top: 10em;
+  margin-right: 45em;
+  margin-left: 45em;
+}
+
+#loginHrBottom
+{
+  position: relative;
+  top: 10em;
+  margin-right: 45em;
+  margin-left: 45em;  
+}
+
+#default_fieldset
+{
+  border: 1px solid #235B6D;
+  width: 25em;
+}
+
+#default_legend
+{
+  color: #fff;
+  background: #235B6D;
+  border: 1px solid #000000;
+  padding: 2px 6px
+}
+
+#default_submitButton
+{
+  margin-left: 54%;
+}
+
+#tableDiv
+{
+  overflow: scroll;
+  height: 10em;
+}
+
+/*############################### ID's Login Page ##########################################################*/
+
+#usernameTextbox
+{
+  background-color: #FCF5D8;
+}
+#usernameLabel
+{
+  color: white;
+  text-shadow: 1px 1px #000000;
+  position: absolute;	
+  margin-left: 4%;
+}
+
+#passwordTextbox
+{
+  background-color: #FCF5D8;
+}
+
+#passwordLabel
+{
+  color: white;
+  text-shadow: 1px 1px #000000;
+  position: absolute;
+  margin-left: 7.75%;
+}
+
+#loginDiv
+{
+  width: 35em;
+  height: 20em;
+  position: relative;
+  top: 15em;
+  bottom: auto;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginForm
+{
+
+}
+
+/*#resetButton
+{
+  position: absolute;
+  width: 50%;
+}
+
+#submitButton
+{	
+  position: absolute;
+  margin-left: 50%;
+  width: 50%;
+}*/
+
+#version
+{
+  position: fixed;
+  top: 85%;
+  right: 94.5%;
+  color: #adb7bd; 
+  font-family: 'Lato', sans-serif; 
+  font-size: 10px; 
+  font-weight: 300; 
+  text-align: center;
+}
+
+/*############################### ID's Create Licence Page #################################################*/
+
+#expiryDate
+{
+  color: #25383C;
+  font-style: italic;
+}
+
+/*############################### ID's Add User Page #######################################################*/
+
+#addUser_submitButton
+{
+  margin-left: 62%;
+}
+
+/*############################### ID's Add Permissions Page ################################################*/
+
+#permissionDescription
+{
+  color: #25383C;
+  font-style: italic;
+}
+
+#addPermissions_button
+{
+  margin-left: 53%;
+}
+
+/*############################### ID's Regenerate Licence Page #############################################*/
+
+#regenerateLicence_button
+{
+  margin-left: 45%;
+}
+
+/*############################### ID's Remove A Licence Page ###############################################*/
+
+#removeLicence_button
+{
+  margin-left: 51%;
+}
+
+#removeLicenceSearch_button
+{
+  margin-left: 43%;
+}
+
+/*############################### ID's Remove User Page ####################################################*/
+
+#removeUser_button
+{
+  margin-left: 54%;
+}
+
+/*##############################  ID's Change Password #####################################################*/
+
+#changePassword_submitButton
+{
+  margin-left: 48.5%;
+}
+
+/*############################### ID's View Licences/Logs Page #############################################*/
+
+#tableofResultsForm
+{
+  position: fixed;
+  width: 40em;
+  margin: 0;
+  padding: 0;
+}
+
+#tableOfResultsDiv
+{
+  width: 40em;
+  height: 25em;
+  position: absolute;
+  top: -10em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#tableOfResultsFieldset
+{
+  border: 1px solid #006400;
+  width: 40em
+}
+
+#table_button
+{
+  margin-left: 77%;
+}
+
+#export_button
+{
+  margin-left: 77%;
+}
+
+/*############################### Classes ##################################################################*/
+
+a
+{
+  display: block;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #235B6D;
+  width: 250px;
+  text-align: center;
+  padding: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover, a:active 
+{
+  background-color: #296b80;
+}
+
+a:deactive
+{
+  background-color: #4A5449;
+}
+
+.loginButtons
+{
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #269126;
+  padding: 4px 15px 4px 15px;
+  text-decoration: none;
+}
+
+.loginButtons:hover
+{
+  background: #27a155;
+  text-decoration: none;
+}
+
+.defaultButton 
+{
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #269126;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.defaultButton:hover 
+{
+  background: #27a155;
+  text-decoration: none;
+}
+
+.btnSubmit
+{
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #269126;
+  padding: 4px 15px 4px 15px;
+  text-decoration: none;
+}
+
+.btnSubmit:hover
+{
+  background: #27a155;
+  text-decoration: none;
+}
+
+.form-style-1 {
+  margin:0px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li 
+{
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+.form-style-1 label
+{
+  color: #25383C;
+  margin:0 0 3px 0;
+  padding:0px;
+  display:block;
+  font-weight: bold;
+}
+
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus
+{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+  -webkit-box-shadow: 0 0 8px #88D5E9;
+  box-shadow: 0 0 8px #88D5E9;
+  border: 1px solid #88D5E9;
+}
+
+.form-style-1 input[type=text], 
+.form-style-1 input[type=password],
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea
+{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border:1px solid #BEBEBE;
+  padding: 7px;
+  margin:0px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;  
+}
+
+.form-style-1 .field-divided
+{
+  width: 49%;
+}
+
+.form-style-1 .field-long
+{
+  width: 90%;
+}
+
+.form-style-1 .field-select
+{
+  width: 100%;
+}
+
+.form-style-1 .field-textarea
+{
+  height: 100px;
+}
+
+.form-style-1 input[type=submit], .form-style-1 input[type=button]
+{
+  background: #235B6D;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover
+{
+  background: #296b80;
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+
+.form-style-1 .required
+{
+  color:red;
+}
+
+/*#################################### Popup  ############################################################*/
+
+#blanket {
+background-color:#dddddd;
+opacity: 0.65;
+*background:none;
+position:absolute;
+z-index: 9001;
+top:0px;
+left:0px;
+width:100%;
+}
+
+#popUpDiv {
+position:absolute;
+background-color:#FFFFF0;
+width:460px;
+height:245px;
+border:2px solid #000;
+z-index: 9002;
+}
+
+#tick
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+#popupTitle
+{
+color: #575757;
+font-size: 30px;
+text-align: center;
+font-weight: 600;
+text-transform: none;
+position: relative;
+margin: 0;
+padding: 0;
+line-height: 60px;
+display: block;
+}
+
+#popupParagraph
+{
+font-size: 16px;
+text-align: center;
+font-weight: 300;
+position: relative;
+float: none;
+margin: 0;
+padding: 0;
+line-height: normal;
+}
+
+.popupButtons
+{
+color: #fff;
+border: 0;
+box-shadow: none;
+font-size: 17px;
+font-weight: 500;
+border-radius: 5px;
+padding: 10px 32px;
+margin: 0 5px;
+cursor: pointer;
+background-color: #27a155;
+}
+
+.popupButtons:hover
+{
+  background: #7AB97A;
+  text-decoration: none;
+}
+
+.dismissButton
+{
+color: #fff;
+border: 0;
+box-shadow: none;
+font-size: 17px;
+font-weight: 500;
+border-radius: 5px;
+padding: 10px 32px;
+margin: 0 5px;
+cursor: pointer;
+background-color: #C03030;
+}
+
+.dismissButton:hover
+{
+background: #CE5E5E;
+text-decoration: none;
+}
+
+/*##########################################################################################################*/
