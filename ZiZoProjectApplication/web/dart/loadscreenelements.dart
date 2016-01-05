@@ -9,4 +9,19 @@ class LoadScreenElements
   {
     ltb.listenToLoginButtons();
   }
+  
+  void addProject()
+  {
+    ltb.listenToAddProjectButtons();
+  }
+  
+  void editProject()
+  {
+    ltb.listenToEditProjectButtons();
+  }
+  
+  void deleteProject()
+  {
+    ltb.listenToDeleteProjectButtons();
+  }
 }

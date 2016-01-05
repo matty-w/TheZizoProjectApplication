@@ -453,12 +453,47 @@ td
 
 #menu
 {
-  position: fixed;
-  left: 0%;
-  top: 30%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  min-height: 13%;
+  max-height: 45px;
+  font-size: 16px;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #f0ffff;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 2px 3px #333333;
+  background-color: #2F2F2F;
+  border-radius: 8px;
+  top: 4.65em;  
+}
+
+#menu ul 
+{
+  height: auto;
+  padding: 8px 0px;
+  margin: 0px;
+}
+
+#menu li 
+{ 
+  width: 13%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#menu a 
+{
+  text-decoration: none;
+  color: #fffff;
+  padding:8px 8px 8px 8px;
+}
+
+#menu a:hover 
+{
+  background-color: #818181;
 }
 
 #pageDiv
@@ -495,15 +530,6 @@ td
   left: 0;
   right: 0;
   margin: auto;
-}
-
-#logoutButton
-{
-  position: fixed;
-  left: 90%;
-  top: 80%;
-  width: 9%;
-  height: auto;
 }
 
 #helpButton
@@ -775,7 +801,7 @@ td
 
 /*############################### Classes ##################################################################*/
 
-a
+/*a
 {
   display: block;
   font-weight: bold;
@@ -796,7 +822,7 @@ a:hover, a:active
 a:deactive
 {
   background-color: #4A5449;
-}
+}*/
 
 .loginButtons
 {

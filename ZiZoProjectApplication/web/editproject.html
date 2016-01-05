@@ -2,32 +2,36 @@
 
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles/webPageStyles.css">
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">  
+    <link rel="stylesheet" href="styles/webPageStyles.css">
+    <title>Edit Project</title>
     <link rel="shortcut icon" href="images/zizoLogoTiny.ico">
-    <title>Login</title>
   </head>
  
-  <body>   
+  <body id="mainBackground">
+  
     <img id="topPage" src="images/whiteBackground.jpg"/>
     <img id="zizoLogo" src="images/logo-zizo.jpg"/>
-    <img id="bottomPage" src="images/whiteBackground.jpg"/>
+    <img id="bottomPage" src="images/whiteBackground.jpg"/> 
     
-    <h2 id="loginTitle">The ZiZo Projects Creator</h2>
-    <h3 id="loginSubTitle">Please Login To Continue:</h3>
-    <hr class = "styleTop">
-      <form id = "loginForm">
-        <div class="login">
-          <input type="text" placeholder="Username" id="usernameTextbox" />
-          <input type="password" placeholder="Password" id="passwordTextbox" />
-          <button id="submitButton" type="button">Submit</button>
-          <button id="resetButton" type="reset">Reset</button>
-        </div>
-      </form>
-    <hr class = "styleBottom">
-    <img id="tinyLogo" src="images/zizoLogoTiny.png">
+
     
+    <div id="menu">
+    <ul>
+    <div id="menuItems">
+    <li id="addProject">   <a id="addProjectButton">Add Project</a></li>
+    <li id="editProject">  <a id="editProjectButton">Edit Project</a></li>
+    <li id="deleteProject"><a id="deleteProjectButton">Delete Project</a></li>
+    <li id="addUsers">     <a id="usersProjectButton">Add Project Users</a></li>
+    <li id="secureProject"><a id="secureProjectButton">Secure Project</a></li>
+    <li id="tagProject">   <a id="tagProjectButton">Tag Folder</a></li>    
+    <li id="logOut">       <a id="logoutButton">Logout</a></li>
+    </div>
+    </ul>
+    </div>
     
     <div id="blanket" style="display:none"></div>
     <div id="popUpDiv" style="display:none">
@@ -43,7 +47,7 @@
         </ul>
         <ul id="ulConPath" class="form-style-1" style="display: none">
           <li><label id="addLabel2" style="display: none">Content Path:<span class="required">*</span></label>
-              <input id="browseText" type="text" class="field-long" placeholder="Content Path" style="display: none" />
+              <input id="browseText" type="text" class="field-long" placeholder="Content Path" style="display: none"/>
               <button id="browseButton" style="display: none">Browse</button>
           </li>
         </ul>
@@ -58,10 +62,10 @@
       <button id = "ok" class = "popupButtons">Ok</button>
       </div>
     </div>
-    
-    <script type="application/dart" src="dart/index.dart"></script>
+             
+       
+    <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>
+    <script type="application/dart" src="dart/editproject.dart"></script>
     <script src="packages/browser/dart.js"></script>
-    
-    <text id = "version">Version: 0.0.1</text> 
   </body>
 </html>
