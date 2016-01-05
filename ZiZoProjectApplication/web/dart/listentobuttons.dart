@@ -18,6 +18,9 @@ class ListenToButtons
     querySelector("#addProjectButton").onClick.listen((MouseEvent m) => goToPage("addProject"));
     querySelector("#editProjectButton").onClick.listen((MouseEvent m) => goToPage("editProject"));
     querySelector("#deleteProjectButton").onClick.listen((MouseEvent m) => goToPage("deleteProject"));
+    querySelector("#usersProjectButton").onClick.listen((MouseEvent m) => goToPage("addUsers"));
+    querySelector("#secureProjectButton").onClick.listen((MouseEvent m) => goToPage("secureProject"));
+    querySelector("#tagProjectButton").onClick.listen((MouseEvent m) => goToPage("tagProject"));
     querySelector("#logoutButton").onClick.listen(navigate.logoutProject);
   }
   
@@ -42,6 +45,21 @@ class ListenToButtons
     navigationButtons();
   }
   
+  void listenToAddUserButtons()
+  {
+    navigationButtons();
+  }
+  
+  void listenToSecureProjectButtons()
+  {
+    navigationButtons();
+  }
+  
+  void listenToTagFolderButtons()
+  {
+    navigationButtons();
+  }
+  
   void goToPage(String pageDestination)
   {
     if(pageDestination == "addProject")
@@ -50,5 +68,11 @@ class ListenToButtons
       window.location.href = "editproject.html";
     if(pageDestination == "deleteProject")
       window.location.href = "deleteproject.html";
+    if(pageDestination == "addUsers")
+      window.location.href = "addusers.html";
+    if(pageDestination == "secureProject")
+      window.location.href = "secureproject.html";
+    if(pageDestination == "tagProject")
+      window.location.href = "tagfolders.html";
   }
 }

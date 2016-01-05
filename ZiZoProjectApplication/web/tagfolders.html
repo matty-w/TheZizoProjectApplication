@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">  
+    <link rel="stylesheet" href="styles/webPageStyles.css">
+    <title>Tag Folders</title>
+    <link rel="shortcut icon" href="images/zizoLogoTiny.ico">
+  </head>
+ 
+  <body id="mainBackground">
+  
+    <img id="topPage" src="images/whiteBackground.jpg"/>
+    <img id="zizoLogo" src="images/logo-zizo.jpg"/>
+    <img id="bottomPage" src="images/whiteBackground.jpg"/> 
+    
+
+    
+    <div id="menu">
+    <ul>
+    <div id="menuItems">
+    <li id="addProject">   <a id="addProjectButton">Add Project</a></li>
+    <li id="editProject">  <a id="editProjectButton">Edit Project</a></li>
+    <li id="deleteProject"><a id="deleteProjectButton">Delete Project</a></li>
+    <li id="addUsers">     <a id="usersProjectButton">Add Project Users</a></li>
+    <li id="secureProject"><a id="secureProjectButton">Secure Project</a></li>
+    <li id="tagProject">   <a id="tagProjectButton">Tag Folder</a></li>    
+    <li id="logOut">       <a id="logoutButton">Logout</a></li>
+    </div>
+    </ul>
+    </div>
+    
+    <div id="blanket" style="display:none"></div>
+    <div id="popUpDiv" style="display:none">
+      <br>
+      <br id="addBreak" hidden>
+      <div id="pictureDiv"><img id = "tick" src = "images/ticksmall.png"/></div>
+      <h2 id = "popupTitle">Licence Created</h2>
+      <div id="divMiddle" align="left">
+        <ul id="ulRegKey" class="form-style-1" style="display: none">
+          <li><label id="addLabel1" style="display: none">Registry Key:<span class="required">*</span></label>
+              <input id="keyText"  type="text" class="field-long" placeholder="Registry Key"  style="display: none"/>
+          </li>
+        </ul>
+        <ul id="ulConPath" class="form-style-1" style="display: none">
+          <li><label id="addLabel2" style="display: none">Content Path:<span class="required">*</span></label>
+              <input id="browseText" type="text" class="field-long" placeholder="Content Path" style="display: none"/>
+              <button id="browseButton" style="display: none">Browse</button>
+          </li>
+        </ul>
+      </div>
+      
+      <p id = "popupParagraph"><output id = "popupText"></output><output id = "serverResponse"></output><p>
+      <div id = "buttonPlacement" align="center">
+      <button id = "dismissFinal" class = "dismissButton">Dismiss</button>
+      <button id = "popupAction" class = "popupButtons">Copy To Clipboard</button>
+      <button id = "no" class = "dismissButton">No</button>
+      <button id = "yes" class = "popupButtons">Yes</button>
+      <button id = "ok" class = "popupButtons">Ok</button>
+      </div>
+    </div>
+             
+       
+    <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>
+    <script type="application/dart" src="dart/tagfolders.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

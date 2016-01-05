@@ -24,4 +24,19 @@ class LoadScreenElements
   {
     ltb.listenToDeleteProjectButtons();
   }
+  
+  void addUsers()
+  {
+    ltb.listenToAddUserButtons();
+  }
+  
+  void secureProject()
+  {
+    ltb.listenToSecureProjectButtons();
+  }
+  
+  void tagFolders()
+  {
+    ltb.listenToTagFolderButtons();
+  }
 }
