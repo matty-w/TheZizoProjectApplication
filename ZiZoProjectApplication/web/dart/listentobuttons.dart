@@ -32,7 +32,17 @@ class ListenToButtons
   
   void listenToAddProjectButtons()
   {
+    ButtonElement toRight = querySelector("#toRightButton");
+    ButtonElement toLeft = querySelector("#toLeftButton");
+    toRight.innerHtml = ">>";
+    toLeft.innerHtml = "<<";
+    toRight.onClick.listen(test);
     navigationButtons();
+  }
+  
+  void test(MouseEvent m)
+  {
+    window.alert("hi!");
   }
   
   void listenToEditProjectButtons()

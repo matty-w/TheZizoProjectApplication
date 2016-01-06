@@ -1150,6 +1150,7 @@ text-decoration: none;
   width: 30%;
   height: 100%;
   float: left;
+  z-index: 3;
 }
 
 #someSelect2
@@ -1159,6 +1160,7 @@ text-decoration: none;
   width: 30%;
   height: 100%;
   left: 23.5%;
+  z-index: 3;
 }
 
 #leftAndRightButtons
@@ -1169,6 +1171,7 @@ text-decoration: none;
   max-width: 100px;
   left: 80px;
   top: 35px;
+  z-index: 2;
 }
 
 #leftToRight
@@ -1179,18 +1182,21 @@ text-decoration: none;
   width: 630px;
   height: 120px;
   float: left;
+  z-index: 1;
 }
 
 #toRightButton
 {
   width: 100px;
   height: 20px;
+  z-index: 3;
 }
 
 #toLeftButton
 {
   width: 100px;
   height: 20px;
+  z-index: 3;
 }
 
 #combinedSelectArea
