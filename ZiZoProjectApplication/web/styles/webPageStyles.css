@@ -558,11 +558,10 @@ td
 
 #formLabel
 {
-  color: #25383C;
+  color: #CCCCCC;
   float: left;
   display: block;
-  margin:0 0 3px 0;
-  padding:0px;
+  margin:0 10px 3px 0;
   font-weight: bold;
   font-style: italic;
 }
@@ -608,14 +607,14 @@ td
 
 #default_fieldset
 {
-  border: 1px solid #235B6D;
+  border: 1px solid #2F2F2F;
   width: 25em;
 }
 
 #default_legend
 {
   color: #fff;
-  background: #235B6D;
+  background: #2F2F2F;
   border: 1px solid #000000;
   padding: 2px 6px
 }
@@ -883,7 +882,7 @@ a:deactive
 
 .form-style-1 {
   margin:0px auto;
-  max-width: 400px;
+  max-width: 1000px;
   padding: 20px 12px 10px 20px;
   font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -896,7 +895,7 @@ a:deactive
 }
 .form-style-1 label
 {
-  color: #25383C;
+  color: #CCCCCC;
   margin:0 0 3px 0;
   padding:0px;
   display:block;
@@ -966,7 +965,7 @@ textarea
 
 .form-style-1 input[type=submit], .form-style-1 input[type=button]
 {
-  background: #235B6D;
+  background: #2F2F2F;
   padding: 8px 15px 8px 15px;
   border: none;
   color: #fff;
@@ -974,7 +973,7 @@ textarea
 
 .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover
 {
-  background: #296b80;
+  background: #555555;
   box-shadow:none;
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
@@ -1081,3 +1080,159 @@ text-decoration: none;
 }
 
 /*##########################################################################################################*/
+
+
+
+
+
+
+#topRow
+{
+  position: relative;
+  border-style: solid;
+  border-width: 3px; 
+  color: #191919;
+}
+
+#bottomRow
+{
+  position: relative;
+  border-style: solid;
+  border-width: 3px; 
+  color: #191919;
+}
+
+#builderCheckDiv
+{
+  position: relative;
+  float: left;
+}
+
+#builderCheckDiv2
+{
+  position: relative;
+  float: left;
+  left: 25px;
+}
+
+#builderCheckbox
+{
+   right: 10px;
+}
+
+#pathwayCheckDiv2
+{
+  position: relative;
+  left: 44%;
+}
+
+#pathwayCheckDiv
+{
+  position: relative;
+  left: 35%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#someSelect1
+{
+  position: relative;
+  overflow: auto;
+  width: 30%;
+  height: 100%;
+  float: left;
+}
+
+#someSelect2
+{
+  position: relative;
+  overflow: auto;
+  width: 30%;
+  height: 100%;
+  left: 23.5%;
+}
+
+#leftAndRightButtons
+{
+  position: relative;
+  float: left;
+  width: 100px;
+  max-width: 100px;
+  left: 80px;
+  top: 35px;
+}
+
+#leftToRight
+{
+  position: relative;
+  left: 0em;
+  top: 0em;
+  width: 630px;
+  height: 120px;
+  float: left;
+}
+
+#toRightButton
+{
+  width: 100px;
+  height: 20px;
+}
+
+#toLeftButton
+{
+  width: 100px;
+  height: 20px;
+}
+
+#combinedSelectArea
+{
+  position: relative;
+  width: 100%;
+}
+
+#textArea
+{
+  position: relative;
+}
+
+#addProjectSubmitButton
+{
+  margin-left: 86%;
+}
+
+.form-style-1 .field-long3
+{
+  width: 80%;
+}
+
+.form-style-1 .field-long2
+{
+  width: 60%;
+}
+
+#projectPageDiv
+{
+  width: 60em;
+  height: 20em;
+  position: absolute;
+  top: -9em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#project_fieldset
+{
+  border: 1px solid #2F2F2F;
+  width: 60em;
+}
