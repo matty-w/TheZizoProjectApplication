@@ -1170,7 +1170,7 @@ text-decoration: none;
   width: 100px;
   max-width: 100px;
   left: 80px;
-  top: 35px;
+  top: 30px;
   z-index: 2;
 }
 
@@ -1241,4 +1241,14 @@ text-decoration: none;
 {
   border: 1px solid #2F2F2F;
   width: 60em;
+}
+
+input#toRightButton
+{
+  height: 30px;
+}
+
+input#toLeftButton
+{
+  height: 30px;
 }
