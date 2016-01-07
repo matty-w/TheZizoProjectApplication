@@ -32,10 +32,12 @@ class ListenToButtons
   
   void listenToAddProjectButtons()
   {
-    ButtonElement toRight = querySelector("#toRightButton");
-    ButtonElement toLeft = querySelector("#toLeftButton");
+    InputElement toRight = querySelector("#toRightButton");
+    InputElement toLeft = querySelector("#toLeftButton");
     querySelector("#someSelect1").onClick.listen(checkForSelectedHelperLeft);
     querySelector("#someSelect2").onClick.listen(checkForSelectedHelperRight);
+    querySelector("#browseButton2").onClick.listen(showFileExplorer);
+    querySelector("#cancelExplorer").onClick.listen(hideExplorer);
     toRight.onClick.listen(moveToRight);
     toLeft.onClick.listen(moveToLeft);
     navigationButtons();
@@ -181,5 +183,19 @@ class ListenToButtons
       window.location.href = "secureproject.html";
     if(pageDestination == "tagProject")
       window.location.href = "tagfolders.html";
+  }
+  
+  void showFileExplorer(MouseEvent m)
+  {
+    PopupSelection ps = new PopupSelection();
+    ps.fileExplorerPopup();
+  }  
+  
+  void hideExplorer(MouseEvent m)
+  {
+    SelectElement fileFilter = querySelector("#fileTypeDropDown");
+    fileFilter.disabled = true;
+    pc.dismiss("#fileBrowserDiv");
+    pc.show("#popUpDiv");
   }
 }

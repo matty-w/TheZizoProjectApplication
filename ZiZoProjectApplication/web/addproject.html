@@ -34,33 +34,37 @@
     </div>
     
     <div id="blanket" style="display:none"></div>
-    <div id="popUpDiv" style="display:none">
-      <br>
-      <br id="addBreak" hidden>
-      <div id="pictureDiv"><img id = "tick" src = "images/ticksmall.png"/></div>
-      <h2 id = "popupTitle">Licence Created</h2>
-      <div id="divMiddle" align="left">
-        <ul id="ulRegKey" class="form-style-1" style="display: none">
-          <li><label id="addLabel1" style="display: none">Registry Key:<span class="required">*</span></label>
-              <input id="keyText"  type="text" class="field-long" placeholder="Registry Key"  style="display: none"/>
-          </li>
-        </ul>
-        <ul id="ulConPath" class="form-style-1" style="display: none">
-          <li><label id="addLabel2" style="display: none">Content Path:<span class="required">*</span></label>
-              <input id="browseText" type="text" class="field-long" placeholder="Content Path" style="display: none"/>
-              <button id="browseButton" style="display: none">Browse</button>
-          </li>
-        </ul>
-      </div>
-      
-      <p id = "popupParagraph"><output id = "popupText"></output><output id = "serverResponse"></output><p>
-      <div id = "buttonPlacement" align="center">
-      <button id = "dismissFinal" class = "dismissButton">Dismiss</button>
-      <button id = "popupAction" class = "popupButtons">Copy To Clipboard</button>
-      <button id = "no" class = "dismissButton">No</button>
-      <button id = "yes" class = "popupButtons">Yes</button>
-      <button id = "ok" class = "popupButtons">Ok</button>
-      </div>
+    <div id="fileBrowserDiv" style="display:none">
+        <div id="topBar"></div>
+          <p id="title">Folders:<output id="projectSelected"></output></p>
+          <p id="subTitle">Select Where You Wish To Place The Project Below:</p>
+        <div id="subTopBar">
+          <input type = "text" id = "folderPath" disabled = "true"/>
+        </div>
+        <div id="sideBar">
+           <h4 id="fileExplorerH4">Projects:</h4>
+        <div id="projectTableHolder">   
+           <table id="projectNames">
+           </table>
+        </div>   
+        </div>      
+        <div id="projectFolderHolder">
+        <table id="projectFolders">
+        </table>
+        </div>
+        <div id="FileTypeDropDownHolder">
+            <select type="text" id="fileTypeDropDown" disabled="true">
+              <option>All Files (.zzdb, .zzmf, .csv)</option>
+              <option>*.zzdb</option>
+              <option>*.zzmf</option>
+              <option>*.csv</option>
+            </select>
+        </div>
+        <div id="buttonHolder">
+          <button id="okExplorer" disabled = "true">Ok</button>
+          <button id="cancelExplorer">Cancel</button>
+        </div>  
+        <div id="bottomBar"></div>
     </div>
     
     <div id="projectPageDiv">
@@ -76,7 +80,7 @@
           </li>
           <li><label>Project Location:<span class="required">*</span></label>
               <input type="text" id = "url" class="field-long3" placeholder="Project Location" />
-              <input type="button" class="loginButtons2" value="Browse"/>
+              <input id="browseButton2" type="button" class="loginButtons2" value="Browse"/>
               <img id="tooltip" data-toggle="tooltip" 
    title="This is where the User types the address of the request. This box should automatically be filled with the default address."
    src="images/tooltipSmall.gif"/>
