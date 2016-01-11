@@ -1237,6 +1237,11 @@ text-decoration: none;
   margin: auto;
 }
 
+#defaultPageDiv
+{
+  
+}
+
 #project_fieldset
 {
   border: 1px solid #2F2F2F;
@@ -1425,4 +1430,15 @@ table#projectFolders
   width: 100%;
   height: 40px;
   background: #D6DBE0;
+}
+
+
+
+
+
+
+
+#defaultProjectSubmitButton
+{
+  margin-left: 65%;
 }

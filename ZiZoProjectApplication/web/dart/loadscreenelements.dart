@@ -1,5 +1,7 @@
 
+import 'dart:html';
 import 'listentobuttons.dart';
+import 'package:ServerFunctions/ServerFunctions.dart';
 
 class LoadScreenElements
 {
@@ -22,6 +24,8 @@ class LoadScreenElements
   
   void deleteProject()
   {
+    LoadFunctions lf = new LoadFunctions();
+    window.onLoad.listen(lf.loadDatasetProjects);
     ltb.listenToDeleteProjectButtons();
   }
   
