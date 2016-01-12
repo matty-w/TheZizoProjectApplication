@@ -62,6 +62,61 @@
       <button id = "ok" class = "popupButtons">Ok</button>
       </div>
     </div>
+    
+    <div id="projectPageDiv">
+    <form id = "default_form" action="#">
+    <fieldset id="project_fieldset">
+      <legend id = "default_legend">Edit A Project</legend>
+        <ul class="form-style-1">
+          <li><label>Project Name:<span class="required">*</span></label>
+              <input type="text" id = "username" class="field-long2" placeholder="Project Name" />
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types the name of the licence they wish to create." 
+   src="images/tooltipSmall.gif"/>
+          <select id ="projectDropDown" type="text" class="field-long3">
+          </select>
+          <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types the name of the licence they wish to create." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Project Location:<span class="required">*</span></label>
+              <input type="text" id = "url" class="field-long3" placeholder="Project Location" />
+              <input id="browseButton2" type="button" class="loginButtons2" value="Browse"/>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types the address of the request. This box should automatically be filled with the default address."
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Select The Helpers You Wish To Include:<span class="required">*</span>
+          <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User selects the length of the Licence they are creating, the User simply selects one of the radio buttons available, to enable the Calendar at the bottom of the form, the 'User Specified' option must be selected." 
+   src="images/tooltipSmall.gif"/>
+          </label>
+            <hr id="createLicenceHr">
+            <div id=combinedSelectArea>
+                <div id="leftToRight">
+                  <select id ="someSelect1" size="5">
+                    <option id="option0">something1</option>
+                    <option id="option1">something2</option>
+                    <option id="option2">something3</option>
+                  </select>
+                  <div id="leftAndRightButtons">
+                    <input type="button" id="toRightButton" value=">>">
+                    <input type="button" id="toLeftButton" value="<<">
+                  </div>
+                  <select id ="someSelect2" size="5">
+                  </select>
+                </div>
+                <div id="textArea">
+                  <textarea id="someText" rows="7" cols="32" disabled="true"></textarea>
+                </div>
+            </div>    
+            <hr id="createLicenceHr">
+          </li>
+      <input type = "button" id = "addProjectSubmitButton" value="Edit Project" class="loginButtons2"/>
+      </ul>
+    </fieldset>
+    </form>
+    </div>
              
        
     <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>

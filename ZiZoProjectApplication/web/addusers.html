@@ -62,6 +62,32 @@
       <button id = "ok" class = "popupButtons">Ok</button>
       </div>
     </div>
+    
+    <div id="pageDivSmall">
+    <form id = "default_form" action="#">
+    <fieldset id="default_fieldset">
+      <legend id = "default_legend">Add A User To A Project</legend>
+        <ul class="form-style-1">
+         <li><label>User:<span class="required">*</span></label>
+              <input id ="projAddUser" type="text" class="field-long3" placeholder="Type The User You Wish To Add To A Project" >
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the logged in User types the name of another User they wish to attatch to a Project." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Project Name:<span class="required">*</span></label>
+              <input id = "projectName" type="text" list = "projectNames" class="field-long3" placeholder="Start Typing To Search Project" >
+              <datalist id="projectNames">
+              </datalist>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types the project they wish to select. The User can also find a project by activating the dropdown box." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+                        <br>
+      <input type = "button" id = "defaultProjectSubmitButton" value="Add User" class="loginButtons2"/>
+      </ul>
+    </fieldset>
+    </form>
+    </div>
              
        
     <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>

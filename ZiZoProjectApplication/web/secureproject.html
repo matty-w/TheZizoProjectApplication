@@ -62,6 +62,35 @@
       <button id = "ok" class = "popupButtons">Ok</button>
       </div>
     </div>
+    
+    <div id="pageDivSmall">
+    <form id = "default_form" action="#">
+    <fieldset id="default_fieldset">
+      <legend id = "default_legend">Secure/Unsecure A Project</legend>
+        <ul class="form-style-1">
+          <li><label>Project Name:<span class="required">*</span></label>
+              <input id = "projectName" type="text" list = "projectNames" class="field-long3" placeholder="Start Typing To Search Project" >
+              <datalist id="projectNames">
+              </datalist>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types the project they wish to select. The User can also find a project by activating the dropdown box." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Secure/Unsecure:<span class="required">*</span></label>
+              <select id ="secureProjectDropdown" type="text" class="field-long3" placeholder="Secure or Unsecure Project">
+                <option id="secured">Secured Project</option>
+                <option id="unsecured">Unsecured Project</option>
+              </select>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User selects whether they want the Project to be secured or unsecured." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+                        <br>
+      <input type = "button" id = "defaultProjectSubmitButton" value="Un/Secure Project" class="loginButtons2"/>
+      </ul>
+    </fieldset>
+    </form>
+    </div>
              
        
     <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>
