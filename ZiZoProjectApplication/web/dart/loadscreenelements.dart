@@ -5,6 +5,7 @@ import 'package:ServerFunctions/ServerFunctions.dart';
 
 class LoadScreenElements
 {
+  LoadFunctions lf = new LoadFunctions();
   ListenToButtons ltb = new ListenToButtons();
   
   void loginPage()
@@ -15,32 +16,30 @@ class LoadScreenElements
   void addProject()
   {
     ltb.listenToAddProjectButtons();
+    window.onLoad.listen((Event e) => lf.loadPluginsAndDescriptions("#pluginsLeft", "#pluginDescription"));
   }
   
   void editProject()
   {
-    LoadFunctions lf = new LoadFunctions();
     window.onLoad.listen((Event e) => lf.loadSelectElementProjects("#projectDropDown"));
+    window.onLoad.listen((Event e) => lf.loadPluginsAndDescriptions("#pluginsLeft", "#pluginDescription"));
     ltb.listenToEditProjectButtons();
   }
   
   void deleteProject()
   {
-    LoadFunctions lf = new LoadFunctions();
     window.onLoad.listen((Event e) => lf.loadDatasetProjects("#projectNames"));
     ltb.listenToDeleteProjectButtons();
   }
   
   void addUsers()
   {
-    LoadFunctions lf = new LoadFunctions();
     window.onLoad.listen((Event e) => lf.loadDatasetProjects("#projectNames"));
     ltb.listenToAddUserButtons();
   }
   
   void secureProject()
   {
-    LoadFunctions lf = new LoadFunctions();
     window.onLoad.listen((Event e) => lf.loadDatasetProjects("#projectNames"));
     ltb.listenToSecureProjectButtons();
   }

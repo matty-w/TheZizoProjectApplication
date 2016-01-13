@@ -7,6 +7,8 @@ class ListenToButtons
 {
   NavigationFunctions navigate = new NavigationFunctions();
   PopupConstructor pc = new PopupConstructor();
+  AddProject ap = new AddProject();
+  
   
   void navigationButtons()
   {
@@ -34,25 +36,34 @@ class ListenToButtons
   {
     InputElement toRight = querySelector("#toRightButton");
     InputElement toLeft = querySelector("#toLeftButton");
-    querySelector("#someSelect1").onClick.listen(checkForSelectedHelperLeft);
-    querySelector("#someSelect2").onClick.listen(checkForSelectedHelperRight);
+    querySelector("#pluginsLeft").onClick.listen(checkForSelectedHelperLeft);
+    querySelector("#pluginsRight").onClick.listen(checkForSelectedHelperRight);
     querySelector("#browseButton2").onClick.listen(showFileExplorer);
     querySelector("#cancelExplorer").onClick.listen(hideExplorer);
+    
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    
     toRight.onClick.listen(moveToRight);
     toLeft.onClick.listen(moveToLeft);
+    querySelector("#addProjectSubmitButton").onClick.listen(ap.addProject);
     navigationButtons();
   }
   
   void moveToRight(MouseEvent m)
   {
-    SelectElement helpers = querySelector("#someSelect1");
-    SelectElement selectedHelpers = querySelector("#someSelect2");
+    SelectElement helpers = querySelector("#pluginsLeft");
+    SelectElement selectedHelpers = querySelector("#pluginsRight");
     for(int i = 0; i < helpers.length; i++)
     {
       if(helpers.options[i].selected)
       {
-        var option = document.createElement("option");
+        String id = helpers.options[i].id;
+        OptionElement option = new OptionElement();
         option.text = helpers.options[i].innerHtml;
+        option.text = helpers.options[i].innerHtml;
+        option.id = id;
         selectedHelpers.add(option,-1);
         helpers.options[i].remove();
       }
@@ -61,14 +72,16 @@ class ListenToButtons
   
   void moveToLeft(MouseEvent m)
   {
-    SelectElement removedHelpers = querySelector("#someSelect1");
-    SelectElement helpers = querySelector("#someSelect2");
+    SelectElement removedHelpers = querySelector("#pluginsLeft");
+    SelectElement helpers = querySelector("#pluginsRight");
     for(int i = 0; i < helpers.length; i++)
     {
       if(helpers.options[i].selected)
       {
-        var option = document.createElement("option");
+        String id = helpers.options[i].id;
+        OptionElement option = new OptionElement();
         option.text = helpers.options[i].innerHtml;
+        option.id = id;
         removedHelpers.add(option,-1);
         helpers.options[i].remove();
       }
@@ -77,51 +90,32 @@ class ListenToButtons
   
   void checkForSelectedHelperLeft(MouseEvent m)
   {
-    SelectElement helpers = querySelector("#someSelect1");
-    SelectElement selectedHelpers = querySelector("#someSelect2");
+    SelectElement helpers = querySelector("#pluginsLeft");
+    SelectElement selectedHelpers = querySelector("#pluginsRight");
     
     for(int i = 0; i < helpers.length; i++)
     {
       if(helpers.options[i].selected)
       {
-        showOptionDescription(helpers.options[i].innerHtml);
+        displayDescription(helpers.options[i].id, "#pluginDescription");
         for(int i = 0; i < selectedHelpers.length; i++)
         {
           selectedHelpers.options[i].selected = false;
         }
       }
-    }
-  }
-  
-  void showOptionDescription(String option)
-  {
-    if(option == "something1")
-    {
-      TextAreaElement text = querySelector("#someText");
-      text.value = "Some description about something1";
-    }
-    if(option == "something2")
-    {
-      TextAreaElement text = querySelector("#someText");
-      text.value = "Some description about something2";
-    }
-    if(option == "something3")
-    {
-      TextAreaElement text = querySelector("#someText");
-      text.value = "Some description about something3";
     }
   }
   
   void checkForSelectedHelperRight(MouseEvent m)
   {
-    SelectElement helpers = querySelector("#someSelect2");
-    SelectElement selectedHelpers = querySelector("#someSelect1");
+    SelectElement helpers = querySelector("#pluginsRight");
+    SelectElement selectedHelpers = querySelector("#pluginsLeft");
     
     for(int i = 0; i < helpers.length; i++)
     {
       if(helpers.options[i].selected)
       {
-        showOptionDescription(helpers.options[i].innerHtml);
+        displayDescription(helpers.options[i].id, "#pluginDescription");
         for(int i = 0; i < selectedHelpers.length; i++)
         {
           selectedHelpers.options[i].selected = false;
@@ -129,16 +123,13 @@ class ListenToButtons
       }
     }
   }
+  
+  void displayDescription(String pluginId, String descriptionIdentifier)
+  {
+    LoadFunctions lf = new LoadFunctions();
+    lf.loadPluginDescriptors(pluginId, descriptionIdentifier);
+  }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
   void test(MouseEvent m)
   {
     window.alert("hi!");

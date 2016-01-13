@@ -1143,7 +1143,7 @@ text-decoration: none;
 
 
 
-#someSelect1
+#pluginsLeft
 {
   position: relative;
   overflow: auto;
@@ -1153,7 +1153,7 @@ text-decoration: none;
   z-index: 3;
 }
 
-#someSelect2
+#pluginsRight
 {
   position: relative;
   overflow: auto;
