@@ -42,7 +42,7 @@ class ListenToButtons
     querySelector("#cancelExplorer").onClick.listen(hideExplorer);
     
     querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
-    querySelector("#ok").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
     
     toRight.onClick.listen(moveToRight);
