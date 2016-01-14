@@ -187,6 +187,5 @@ class ListenToButtons
     SelectElement fileFilter = querySelector("#fileTypeDropDown");
     fileFilter.disabled = true;
     pc.dismiss("#fileBrowserDiv");
-    pc.show("#popUpDiv");
   }
 }
