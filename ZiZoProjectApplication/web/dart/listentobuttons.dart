@@ -8,6 +8,7 @@ class ListenToButtons
   NavigationFunctions navigate = new NavigationFunctions();
   PopupConstructor pc = new PopupConstructor();
   AddProject ap = new AddProject();
+  DeleteProject dp = new DeleteProject();
   
   
   void navigationButtons()
@@ -142,6 +143,12 @@ class ListenToButtons
   
   void listenToDeleteProjectButtons()
   {
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    
+    querySelector("#defaultProjectSubmitButton").onClick.listen(dp.deleteProject);
+    
     navigationButtons();
   }
   

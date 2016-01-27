@@ -28,7 +28,7 @@ class LoadScreenElements
   
   void deleteProject()
   {
-    window.onLoad.listen((Event e) => lf.loadDatasetProjects("#projectNames"));
+    window.onLoad.listen((Event e) => lf.loadSelectElementProjects("#projectNames"));
     ltb.listenToDeleteProjectButtons();
   }
   
