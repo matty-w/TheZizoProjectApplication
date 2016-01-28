@@ -22,7 +22,7 @@ class LoadScreenElements
   void editProject()
   {
     window.onLoad.listen((Event e) => lf.loadSelectElementProjects("#projectDropDown"));
-    window.onLoad.listen((Event e) => lf.loadPluginsAndDescriptions("#pluginsLeft", "#pluginDescription"));
+    //window.onLoad.listen((Event e) => lf.loadPluginsAndDescriptions("#pluginsLeft", "#pluginDescription"));
     ltb.listenToEditProjectButtons();
   }
   

@@ -9,6 +9,7 @@ class ListenToButtons
   PopupConstructor pc = new PopupConstructor();
   AddProject ap = new AddProject();
   DeleteProject dp = new DeleteProject();
+  LoadFunctions lf = new LoadFunctions();
   
   
   void navigationButtons()
@@ -127,7 +128,6 @@ class ListenToButtons
   
   void displayDescription(String pluginId, String descriptionIdentifier)
   {
-    LoadFunctions lf = new LoadFunctions();
     lf.loadPluginDescriptors(pluginId, descriptionIdentifier);
   }
 
@@ -138,6 +138,7 @@ class ListenToButtons
   
   void listenToEditProjectButtons()
   {
+    querySelector("#projectDropDown").onChange.listen((Event e) => lf.loadProjectDetails("#projName", "#projDescription"));
     navigationButtons();
   }
   
