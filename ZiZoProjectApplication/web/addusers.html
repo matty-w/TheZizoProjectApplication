@@ -25,13 +25,14 @@
     <li id="addProject">   <a id="addProjectButton">Add Project</a></li>
     <li id="editProject">  <a id="editProjectButton">Edit Project Details</a></li>
     <li id="deleteProject"><a id="deleteProjectButton">Delete Project</a></li>
-    <li id="addUsers">     <a id="usersProjectButton">Add Project Users</a></li>
+    <li id="addUsers">     <a id="usersProjectButton">Add/Remove Users</a></li>
     <li id="secureProject"><a id="secureProjectButton">Secure Project</a></li>
+    <li id="addFolder">    <a id="addFolderButton">Add Folder</a></li>  
     <li id="tagProject">   <a id="tagProjectButton">Tag Folder</a></li>    
     <li id="logOut">       <a id="logoutButton">Logout</a></li>
     </div>
     </ul>
-    </div>
+    </div>v>
     
     <div id="blanket" style="display:none"></div>
     <div id="popUpDiv" style="display:none">
@@ -66,8 +67,17 @@
     <div id="pageDivSmall">
     <form id = "default_form" action="#">
     <fieldset id="default_fieldset">
-      <legend id = "default_legend">Add A User To A Project</legend>
+      <legend id = "default_legend">Add/Remove A User To A Project</legend>
         <ul class="form-style-1">
+         <li><label>Add/Remove:<span class="required">*</span></label>
+              <select id="projectAddRemoveUser" type="text" class="field-long3">
+                <option>Add User</option>
+                <option>Remove User</option>
+              </select>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the logged in User selects whether they wish to add a User to a Project, or remove one." 
+   src="images/tooltipSmall.gif"/>
+         </li>
          <li><label>User:<span class="required">*</span></label>
               <input id ="projAddUser" type="text" class="field-long3" placeholder="Type The User You Wish To Add To A Project" >
               <img id="tooltip" data-toggle="tooltip" 
@@ -75,15 +85,29 @@
    src="images/tooltipSmall.gif"/>
           </li>
           <li><label>Project Name:<span class="required">*</span></label>
-              <input id = "projectName" type="text" list = "projectNames" class="field-long3" placeholder="Start Typing To Search Project" >
-              <datalist id="projectNames">
-              </datalist>
+              <select id="projectNames" type="text" class="field-long3" placeholder="Start Typing To Search Project">
+              </select>
               <img id="tooltip" data-toggle="tooltip" 
-   title="This is where the User types the project they wish to select. The User can also find a project by activating the dropdown box." 
+   title="This is where a Project is chosen to add the selected User to." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Project Permissions:<span class="required">*</span></label>
+              <select id="projectPermissions" type="text" class="field-long3" placeholder="Start Typing To Search Project">
+                <option>No Permissions</option>
+                <option>Read</option>
+                <option>Write</option>
+                <option>Add Permission</option>
+                <option>Read And Write</option>
+                <option>Read And Add Permission</option>
+                <option>Write And Add Permission</option>
+                <option>Read, Write And Add Permission</option>
+              </select>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User selects the Permissions required for the newly added User. This box will disable if the User selects the 'Remove User' option." 
    src="images/tooltipSmall.gif"/>
           </li>
                         <br>
-      <input type = "button" id = "defaultProjectSubmitButton" value="Add User" class="loginButtons2"/>
+      <input type = "button" id = "defaultProjectSubmitButton2" value="Add/Remove User" class="loginButtons2"/>
       </ul>
     </fieldset>
     </form>

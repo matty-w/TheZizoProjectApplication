@@ -478,7 +478,7 @@ td
 
 #menu li 
 { 
-  width: 13%;
+  width: 12%;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -513,7 +513,7 @@ td
   width: 25em;
   height: 25em;
   position: absolute;
-  top: 5em;
+  top: 0em;
   bottom: 0;
   left: 0;
   right: 0;
@@ -1225,11 +1225,6 @@ text-decoration: none;
   width: 60%;
 }
 
-.form-style-1 .field-long3
-{
-  width: 40%;
-}
-
 #projectPageDiv
 {
   width: 60em;
@@ -1476,7 +1471,20 @@ table#projectFolders
   margin: 0 0 0 0;
   transition: box-shadow 0.3s;
   width: 240px;
-  width: 80%;
+  width: 90%;
+}
+
+#projectDropDownLarge
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
 }
 
 #projectDropDown
@@ -1528,8 +1536,84 @@ table#projectFolders
   margin: 0 0 0 0;
   transition: box-shadow 0.3s;
   width: 240px;
-  width: 80%;
+  width: 90%;
 }
+
+#projectMakeSubFolder
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#folderNames
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#projAddUser
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#projectPermissions
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#projectAddRemoveUser
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#defaultProjectSubmitButton2
+{
+  width: 50%;
+}
+
+#defaultProjectSubmitButtonSmall
+{
+  width: 25%;
+}
+
 
 
 
@@ -1543,3 +1627,15 @@ table#projectFolders
 }
 
 
+
+#checkboxDiv
+{
+  margin: 0px 40px 10px 40px;
+  display: inline-block;
+  border: 1px solid #2F2F2F;
+}
+
+#hiddenFolderPrompt
+{
+  display: none;
+}

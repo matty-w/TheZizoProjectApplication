@@ -8,8 +8,12 @@ class ListenToButtons
   NavigationFunctions navigate = new NavigationFunctions();
   PopupConstructor pc = new PopupConstructor();
   AddProject ap = new AddProject();
+  AddRemoveUserToProject arutp = new AddRemoveUserToProject();
   DeleteProject dp = new DeleteProject();
-  LoadFunctions lf = new LoadFunctions();
+  OnLoadProject olp = new OnLoadProject();
+  ProjectSecurity ps = new ProjectSecurity();
+  EditProjectDetails epd = new EditProjectDetails();
+  ProjectActionFunctions paf = new ProjectActionFunctions();
   
   
   void navigationButtons()
@@ -24,6 +28,7 @@ class ListenToButtons
     querySelector("#deleteProjectButton").onClick.listen((MouseEvent m) => goToPage("deleteProject"));
     querySelector("#usersProjectButton").onClick.listen((MouseEvent m) => goToPage("addUsers"));
     querySelector("#secureProjectButton").onClick.listen((MouseEvent m) => goToPage("secureProject"));
+    querySelector("#addFolderButton").onClick.listen((MouseEvent m) => goToPage("addFolder"));
     querySelector("#tagProjectButton").onClick.listen((MouseEvent m) => goToPage("tagProject"));
     querySelector("#logoutButton").onClick.listen(navigate.logoutProject);
   }
@@ -38,107 +43,31 @@ class ListenToButtons
   {
     InputElement toRight = querySelector("#toRightButton");
     InputElement toLeft = querySelector("#toLeftButton");
-    querySelector("#pluginsLeft").onClick.listen(checkForSelectedHelperLeft);
-    querySelector("#pluginsRight").onClick.listen(checkForSelectedHelperRight);
-    querySelector("#browseButton2").onClick.listen(showFileExplorer);
+    querySelector("#pluginsLeft").onClick.listen((MouseEvent m) => 
+        paf.checkForSelectedHelperLeft("#pluginsLeft", "#pluginsRight", "#pluginDescription"));
+    querySelector("#pluginsRight").onClick.listen((MouseEvent m) =>
+        paf.checkForSelectedHelperRight("#pluginsLeft", "#pluginsRight", "#pluginDescription"));
     querySelector("#cancelExplorer").onClick.listen(hideExplorer);
     
     querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
     querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
     
-    toRight.onClick.listen(moveToRight);
-    toLeft.onClick.listen(moveToLeft);
-    querySelector("#addProjectSubmitButton").onClick.listen(ap.addProject);
+    toRight.onClick.listen((MouseEvent m) => paf.moveToRight("#pluginsLeft", "#pluginsRight"));
+    toLeft.onClick.listen((MouseEvent m) => paf.moveToLeft("#pluginsLeft", "#pluginsRight"));
+    querySelector("#defaultProjectSubmitButtonSmall").onClick.listen((MouseEvent m) => ap.addProject("#projName", "#projLocation", "#pluginsRight"));
     navigationButtons();
-  }
-  
-  void moveToRight(MouseEvent m)
-  {
-    SelectElement helpers = querySelector("#pluginsLeft");
-    SelectElement selectedHelpers = querySelector("#pluginsRight");
-    for(int i = 0; i < helpers.length; i++)
-    {
-      if(helpers.options[i].selected)
-      {
-        String id = helpers.options[i].id;
-        OptionElement option = new OptionElement();
-        option.text = helpers.options[i].innerHtml;
-        option.text = helpers.options[i].innerHtml;
-        option.id = id;
-        selectedHelpers.add(option,-1);
-        helpers.options[i].remove();
-      }
-    }
-  }
-  
-  void moveToLeft(MouseEvent m)
-  {
-    SelectElement removedHelpers = querySelector("#pluginsLeft");
-    SelectElement helpers = querySelector("#pluginsRight");
-    for(int i = 0; i < helpers.length; i++)
-    {
-      if(helpers.options[i].selected)
-      {
-        String id = helpers.options[i].id;
-        OptionElement option = new OptionElement();
-        option.text = helpers.options[i].innerHtml;
-        option.id = id;
-        removedHelpers.add(option,-1);
-        helpers.options[i].remove();
-      }
-    }
-  }
-  
-  void checkForSelectedHelperLeft(MouseEvent m)
-  {
-    SelectElement helpers = querySelector("#pluginsLeft");
-    SelectElement selectedHelpers = querySelector("#pluginsRight");
-    
-    for(int i = 0; i < helpers.length; i++)
-    {
-      if(helpers.options[i].selected)
-      {
-        displayDescription(helpers.options[i].id, "#pluginDescription");
-        for(int i = 0; i < selectedHelpers.length; i++)
-        {
-          selectedHelpers.options[i].selected = false;
-        }
-      }
-    }
-  }
-  
-  void checkForSelectedHelperRight(MouseEvent m)
-  {
-    SelectElement helpers = querySelector("#pluginsRight");
-    SelectElement selectedHelpers = querySelector("#pluginsLeft");
-    
-    for(int i = 0; i < helpers.length; i++)
-    {
-      if(helpers.options[i].selected)
-      {
-        displayDescription(helpers.options[i].id, "#pluginDescription");
-        for(int i = 0; i < selectedHelpers.length; i++)
-        {
-          selectedHelpers.options[i].selected = false;
-        }
-      }
-    }
-  }
-  
-  void displayDescription(String pluginId, String descriptionIdentifier)
-  {
-    lf.loadPluginDescriptors(pluginId, descriptionIdentifier);
-  }
-
-  void test(MouseEvent m)
-  {
-    window.alert("hi!");
   }
   
   void listenToEditProjectButtons()
   {
-    querySelector("#projectDropDown").onChange.listen((Event e) => lf.loadProjectDetails("#projName", "#projDescription"));
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    
+    querySelector("#projectDropDown").onChange.listen((Event e) => olp.loadProjectDetails("#projName", "#projDescription"));
+    querySelector("#defaultProjectSubmitButtonSmall").onClick.listen((MouseEvent m) => 
+        epd.editProjectDetails("#projectDropDown", "#projName", "#projDescription", "#pluginsRight"));
     navigationButtons();
   }
   
@@ -148,18 +77,40 @@ class ListenToButtons
     querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
     
-    querySelector("#defaultProjectSubmitButton").onClick.listen(dp.deleteProject);
+    querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => dp.deleteProject("#projectNames"));
     
     navigationButtons();
   }
   
-  void listenToAddUserButtons()
+  void listenToAddRemoveUserButtons()
   {
+    querySelector("#projectAddRemoveUser").onChange.listen((Event e) => 
+        arutp.togglePermissionsBox("#projectAddRemoveUser", "#projectPermissions"));
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => 
+        arutp.addRemoveUserToProject("#projectNames", "#projAddUser", "#projectPermissions", "#projectAddRemoveUser"));
     navigationButtons();
   }
   
   void listenToSecureProjectButtons()
   {
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => 
+        ps.secureOrUnsecureProject("#secureProjectDropdown", "#projectDropDownLarge", "#usernameOutput"));
+    navigationButtons();
+  }
+  
+  void listenToAddFolderButtons()
+  {
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#projectMakeSubFolder").onChange.listen((Event e) => 
+        paf.displayHiddenDropDown("#hiddenFolderPrompt", "#projectMakeSubFolder"));
     navigationButtons();
   }
   
@@ -180,6 +131,8 @@ class ListenToButtons
       window.location.href = "addusers.html";
     if(pageDestination == "secureProject")
       window.location.href = "secureproject.html";
+    if(pageDestination == "addFolder")
+      window.location.href = "addfolders.html";
     if(pageDestination == "tagProject")
       window.location.href = "tagfolders.html";
   }

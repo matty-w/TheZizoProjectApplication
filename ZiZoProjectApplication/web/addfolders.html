@@ -7,7 +7,7 @@
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">  
     <link rel="stylesheet" href="styles/webPageStyles.css">
-    <title>Delete Project</title>
+    <title>Add Folders</title>
     <link rel="shortcut icon" href="images/zizoLogoTiny.ico">
   </head>
  
@@ -64,28 +64,49 @@
       </div>
     </div>
     
-       <div id="pageDivSmall">
+        <div id="pageDivSmall">
     <form id = "default_form" action="#">
     <fieldset id="default_fieldset">
-      <legend id = "default_legend">Delete A Project</legend>
+      <legend id = "default_legend">Add A Folder To A Project</legend>
         <ul class="form-style-1">
           <li><label>Project Name:<span class="required">*</span></label>
-              <select id="projectNames" type="text" class="field-long3" placeholder="Start Typing To Search Project">
+              <select id="projectNames" type="text" class="field-long3">
               </select>
               <img id="tooltip" data-toggle="tooltip" 
-   title="This is where the User selects the project they wish to delete." 
+   title="This is where a Project is chosen to add the new folder to." 
    src="images/tooltipSmall.gif"/>
           </li>
+          <li><label>Folder Name:<span class="required">*</span></label>
+              <input id ="projAddUser" type="text" class="field-long3">
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User types what they wish to call the new directory." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li><label>Make The New Folder A Sub-Folder?:<span class="required">*</span></label>
+              <select id="projectMakeSubFolder" type="text" class="field-long3" placeholder="Start Typing To Search Project">
+                <option id="No">No</option>
+                <option id="Yes">Yes</option>
+              </select>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User chooses whether they want the newly created folder to be placed in an already existing sub-directory, if the User selects 'Yes', a new dropdown, containing the project sub-directories will appear." 
+   src="images/tooltipSmall.gif"/>
+          </li>
+          <li id="hiddenFolderPrompt"><label>Place The New Folder In:<span class="required">*</span></label>
+              <select id="folderNames" type="text" class="field-long3">
+              </select>
+              <img id="tooltip" data-toggle="tooltip" 
+   title="This is where the User selects the directory in which they wish to place the newly created directory." 
+   src="images/tooltipSmall.gif"/>
+          </li>                        
                         <br>
-      <input type = "button" id = "defaultProjectSubmitButton2" value="Delete Project" class="loginButtons2"/>
+      <input type = "button" id = "defaultProjectSubmitButton2" value="Add A Folder" class="loginButtons2"/>
       </ul>
     </fieldset>
     </form>
     </div>
-             
        
     <p id="loggedInUserLabel">Logged In As: <output id="usernameOutput"></output></p>
-    <script type="application/dart" src="dart/deleteproject.dart"></script>
+    <script type="application/dart" src="dart/addfolders.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </body>
 </html>

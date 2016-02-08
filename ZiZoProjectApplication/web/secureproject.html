@@ -25,8 +25,9 @@
     <li id="addProject">   <a id="addProjectButton">Add Project</a></li>
     <li id="editProject">  <a id="editProjectButton">Edit Project Details</a></li>
     <li id="deleteProject"><a id="deleteProjectButton">Delete Project</a></li>
-    <li id="addUsers">     <a id="usersProjectButton">Add Project Users</a></li>
+    <li id="addUsers">     <a id="usersProjectButton">Add/Remove Users</a></li>
     <li id="secureProject"><a id="secureProjectButton">Secure Project</a></li>
+    <li id="addFolder">    <a id="addFolderButton">Add Folder</a></li>  
     <li id="tagProject">   <a id="tagProjectButton">Tag Folder</a></li>    
     <li id="logOut">       <a id="logoutButton">Logout</a></li>
     </div>
@@ -69,11 +70,10 @@
       <legend id = "default_legend">Secure/Unsecure A Project</legend>
         <ul class="form-style-1">
           <li><label>Project Name:<span class="required">*</span></label>
-              <input id = "projectName" type="text" list = "projectNames" class="field-long3" placeholder="Start Typing To Search Project" >
-              <datalist id="projectNames">
-              </datalist>
+              <select id ="projectDropDownLarge" type="text" class="field-long3">
+              </select>
               <img id="tooltip" data-toggle="tooltip" 
-   title="This is where the User types the project they wish to select. The User can also find a project by activating the dropdown box." 
+   title="This is where the User selects the Project they wish to Secure/Unsecure." 
    src="images/tooltipSmall.gif"/>
           </li>
           <li><label>Secure/Unsecure:<span class="required">*</span></label>
@@ -86,7 +86,7 @@
    src="images/tooltipSmall.gif"/>
           </li>
                         <br>
-      <input type = "button" id = "defaultProjectSubmitButton" value="Un/Secure Project" class="loginButtons2"/>
+      <input type = "button" id = "defaultProjectSubmitButton2" value="Un/Secure Project" class="loginButtons2"/>
       </ul>
     </fieldset>
     </form>
