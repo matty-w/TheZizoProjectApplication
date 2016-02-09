@@ -109,6 +109,10 @@ class ListenToButtons
     querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
     querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    
+    SelectElement projectDropDown = querySelector("#projectNames");
+    projectDropDown.onChange.listen((Event e) => paf.loadProjectFolders(projectDropDown.value, "#folderNames"));
+    
     querySelector("#projectMakeSubFolder").onChange.listen((Event e) => 
         paf.displayHiddenDropDown("#hiddenFolderPrompt", "#projectMakeSubFolder"));
     navigationButtons();
