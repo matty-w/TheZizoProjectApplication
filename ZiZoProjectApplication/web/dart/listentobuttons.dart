@@ -5,7 +5,8 @@ import 'package:PopupLibrary/PopupLibrary.dart';
 
 class ListenToButtons
 {
-  NavigationFunctions navigate = new NavigationFunctions();
+  GlobalNavigationFunctions gnf = new GlobalNavigationFunctions();
+  ProjectNavigation pn = new ProjectNavigation();
   PopupConstructor pc = new PopupConstructor();
   AddProject ap = new AddProject();
   AddRemoveUserToProject arutp = new AddRemoveUserToProject();
@@ -20,24 +21,22 @@ class ListenToButtons
   
   void navigationButtons()
   {
-    if(window.sessionStorage['username'] == null || window.sessionStorage['username'] == "")
-    {
-      navigate.goToIndexPage();
-    }
+    gnf.checkForLoggedInUser("username", "password");
     querySelector("#usernameOutput").innerHtml = window.sessionStorage['username'];
-    querySelector("#addProjectButton").onClick.listen((MouseEvent m) => goToPage("addProject"));
-    querySelector("#editProjectButton").onClick.listen((MouseEvent m) => goToPage("editProject"));
-    querySelector("#deleteProjectButton").onClick.listen((MouseEvent m) => goToPage("deleteProject"));
-    querySelector("#usersProjectButton").onClick.listen((MouseEvent m) => goToPage("addUsers"));
-    querySelector("#secureProjectButton").onClick.listen((MouseEvent m) => goToPage("secureProject"));
-    querySelector("#addFolderButton").onClick.listen((MouseEvent m) => goToPage("addFolder"));
-    querySelector("#tagProjectButton").onClick.listen((MouseEvent m) => goToPage("tagProject"));
-    querySelector("#logoutButton").onClick.listen(navigate.logoutProject);
+    querySelector("#addProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("addProject"));
+    querySelector("#editProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("editProject"));
+    querySelector("#deleteProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("deleteProject"));
+    querySelector("#usersProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("addUsers"));
+    querySelector("#secureProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("secureProject"));
+    querySelector("#addFolderButton").onClick.listen((MouseEvent m) => pn.goToPageProject("addFolder"));
+    querySelector("#tagProjectButton").onClick.listen((MouseEvent m) => pn.goToPageProject("tagProject"));
+    querySelector("#logoutButton").onClick.listen(pn.logoutProject);
   }
   
   void listenToLoginButtons()
   {
-    querySelector("#submitButton").onClick.listen(navigate.loginProject);
+    querySelector("#submitButton").onClick.listen((MouseEvent m) => 
+        gnf.basicAuthenticationLogin("#usernameTextbox", "#passwordTextbox", "Project-Application"));
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
   }
   
@@ -49,8 +48,6 @@ class ListenToButtons
         paf.checkForSelectedHelperLeft("#pluginsLeft", "#pluginsRight", "#pluginDescription"));
     querySelector("#pluginsRight").onClick.listen((MouseEvent m) =>
         paf.checkForSelectedHelperRight("#pluginsLeft", "#pluginsRight", "#pluginDescription"));
-    querySelector("#cancelExplorer").onClick.listen(hideExplorer);
-    
     querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
     querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
@@ -80,7 +77,6 @@ class ListenToButtons
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
     
     querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => dp.deleteProject("#projectNames"));
-    
     navigationButtons();
   }
   
@@ -132,36 +128,5 @@ class ListenToButtons
     querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => 
         tpf.tagProjectFolder("#projectNames", "#folderNames", "#projTagName"));
     navigationButtons();
-  }
-  
-  void goToPage(String pageDestination)
-  {
-    if(pageDestination == "addProject")
-      window.location.href = "addproject.html";
-    if(pageDestination == "editProject")
-      window.location.href = "editproject.html";
-    if(pageDestination == "deleteProject")
-      window.location.href = "deleteproject.html";
-    if(pageDestination == "addUsers")
-      window.location.href = "addusers.html";
-    if(pageDestination == "secureProject")
-      window.location.href = "secureproject.html";
-    if(pageDestination == "addFolder")
-      window.location.href = "addfolders.html";
-    if(pageDestination == "tagProject")
-      window.location.href = "tagfolders.html";
-  }
-  
-  void showFileExplorer(MouseEvent m)
-  {
-    PopupSelection ps = new PopupSelection();
-    ps.fileExplorerPopup();
-  }  
-  
-  void hideExplorer(MouseEvent m)
-  {
-    SelectElement fileFilter = querySelector("#fileTypeDropDown");
-    fileFilter.disabled = true;
-    pc.dismiss("#fileBrowserDiv");
   }
 }
