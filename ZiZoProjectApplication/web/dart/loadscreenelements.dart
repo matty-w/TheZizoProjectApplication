@@ -46,12 +46,13 @@ class LoadScreenElements
   
   void addFolder()
   {
-    window.onLoad.listen((Event e) => olp.loadSelectElementProjects("#projectNames", false));
+    window.onLoad.listen((Event e) => olp.loadSelectElementProjectsWithFolders("#projectNames", "#folderNames"));
     ltb.listenToAddFolderButtons();
   }
   
   void tagFolders()
   {
+    window.onLoad.listen((Event e) => olp.loadSelectElementProjectsWithFolders("#projectNames", "#folderNames"));
     ltb.listenToTagFolderButtons();
   }
 }

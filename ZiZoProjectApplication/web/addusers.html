@@ -71,8 +71,8 @@
         <ul class="form-style-1">
          <li><label>Add/Remove:<span class="required">*</span></label>
               <select id="projectAddRemoveUser" type="text" class="field-long3">
-                <option>Add User</option>
                 <option>Remove User</option>
+                <option>Add User</option>
               </select>
               <img id="tooltip" data-toggle="tooltip" 
    title="This is where the logged in User selects whether they wish to add a User to a Project, or remove one." 
@@ -91,7 +91,7 @@
    title="This is where a Project is chosen to add the selected User to." 
    src="images/tooltipSmall.gif"/>
           </li>
-          <li><label>Project Permissions:<span class="required">*</span></label>
+          <li id="hiddenFolderPrompt"><label>Project Permissions:<span class="required">*</span></label>
               <select id="projectPermissions" type="text" class="field-long3" placeholder="Start Typing To Search Project">
                 <option>No Permissions</option>
                 <option>Read</option>
@@ -107,7 +107,7 @@
    src="images/tooltipSmall.gif"/>
           </li>
                         <br>
-      <input type = "button" id = "defaultProjectSubmitButton2" value="Add/Remove User" class="loginButtons2"/>
+      <input type = "button" id = "defaultProjectSubmitButton2" value="Remove User" class="loginButtons2"/>
       </ul>
     </fieldset>
     </form>

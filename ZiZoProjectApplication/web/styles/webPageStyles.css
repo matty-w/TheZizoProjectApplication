@@ -1578,6 +1578,32 @@ table#projectFolders
   width: 90%;
 }
 
+#projFolderName
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
+#projTagName
+{
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 0 0 0 0;
+  transition: box-shadow 0.3s;
+  width: 240px;
+  width: 90%;
+}
+
 #projectPermissions
 {
   border-radius: 4px;

@@ -28,11 +28,11 @@ packages:
   args:
     description: args
     source: hosted
-    version: "0.13.2"
+    version: "0.13.3+3"
   async:
     description: async
     source: hosted
-    version: "1.5.0"
+    version: "1.8.0"
   barback:
     description: barback
     source: hosted
@@ -44,7 +44,7 @@ packages:
   collection:
     description: collection
     source: hosted
-    version: "1.2.0"
+    version: "1.4.0"
   csslib:
     description: csslib
     source: hosted
@@ -76,7 +76,7 @@ packages:
   stack_trace:
     description: stack_trace
     source: hosted
-    version: "1.5.0"
+    version: "1.6.0"
   utf:
     description: utf
     source: hosted

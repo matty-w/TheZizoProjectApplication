@@ -13,6 +13,8 @@ class ListenToButtons
   OnLoadProject olp = new OnLoadProject();
   ProjectSecurity ps = new ProjectSecurity();
   EditProjectDetails epd = new EditProjectDetails();
+  AddProjectFolder apf = new AddProjectFolder();
+  TagProjectFolder tpf = new TagProjectFolder();
   ProjectActionFunctions paf = new ProjectActionFunctions();
   
   
@@ -85,7 +87,7 @@ class ListenToButtons
   void listenToAddRemoveUserButtons()
   {
     querySelector("#projectAddRemoveUser").onChange.listen((Event e) => 
-        arutp.togglePermissionsBox("#projectAddRemoveUser", "#projectPermissions"));
+        arutp.togglePermissionsBox("#projectAddRemoveUser", "#projectPermissions", "#hiddenFolderPrompt", "#defaultProjectSubmitButton2"));
     querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
     querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
     querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
@@ -115,11 +117,20 @@ class ListenToButtons
     
     querySelector("#projectMakeSubFolder").onChange.listen((Event e) => 
         paf.displayHiddenDropDown("#hiddenFolderPrompt", "#projectMakeSubFolder"));
+    querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => 
+        apf.addFolderToProject("#projectNames", "#projFolderName", "#projectMakeSubFolder", "#folderNames"));
     navigationButtons();
   }
   
   void listenToTagFolderButtons()
   {
+    querySelector("#no").onClick.listen(pc.dismissBasicPrompt);
+    querySelector("#ok").onClick.listen(pc.dismissBasicPromptReload);
+    querySelector("#dismissFinal").onClick.listen(pc.dismissBasicPrompt);
+    SelectElement projectDropDown = querySelector("#projectNames");
+    projectDropDown.onChange.listen((Event e) => paf.loadProjectFolders(projectDropDown.value, "#folderNames"));
+    querySelector("#defaultProjectSubmitButton2").onClick.listen((MouseEvent m) => 
+        tpf.tagProjectFolder("#projectNames", "#folderNames", "#projTagName"));
     navigationButtons();
   }
   
